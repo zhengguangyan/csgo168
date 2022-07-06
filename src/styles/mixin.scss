@@ -1,0 +1,149 @@
+@mixin url($url) {
+    background-image: url('~@/assets/images/'+$url);
+}
+
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+//定位上下左右居中
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下左右居中
+@mixin flex($z) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    z-index: $z;
+}
+
+//定位上下居中
+@mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+//定位左右居中
+@mixin btn($width,$height,$color) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    border: $color 1px solid;
+    color: $color;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+        background-color: $color;
+        color: white - $color;
+    }
+}
+
+//定位左右居中
+@mixin input($color) {
+    /deep/.el-input{
+        input::-webkit-input-placeholder {
+            color:$color;
+            font-size: 16px;
+        }
+    }
+    /deep/.el-input__inner {
+        border-radius: 0;
+        background-color: rgba($color: $color, $alpha: 0.2);
+        border-color: $color;
+        color: $color;
+    }
+    /deep/.el-input__inner:focus {
+        border-color: $color;
+    }
+}
+
+@mixin title{
+    text-shadow: rgb(0, 0, 0) .03rem .03rem 0px;
+    width: 3rem;
+    position: relative;
+    font-weight: 700;
+    font-size: .2rem;
+    letter-spacing: .05rem;
+    padding: .1rem;
+    text-align: center;
+    padding-top: .3rem;
+    margin: 0 auto .3rem;
+    &::after {
+        height: 2px;
+        content: "";
+        width: 100%;
+        left: 0px;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(
+            90deg,
+            transparent,rgba(255, 0, 0, 0.8),transparent
+        );
+        border-radius: 1px;
+    }
+}
+
+@mixin texthide {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+@function lv-img($lv){
+    $url : '~@/assets/images/';
+    $img : '';
+    @if $lv==1 {
+        $img: 'Roll/yellow.png';
+    }@else if $lv==2 {
+        $img: 'Roll/red.png';
+    }@else if $lv==3 {
+        $img: 'Roll/purple.png';
+    }@else if $lv==4 {
+        $img: 'Roll/blue.png';
+    }@else if $lv==5 {
+        $img: 'Roll/grey.png';
+    }
+    @return $url + $img;
+}
+
+@function lv-color($lv){
+    @if $lv==1 {
+        @return  #e6ba1c;
+    }@else if $lv==2 {
+        @return  #d32ce6;
+    }@else if $lv==3 {
+        @return  #834fff;
+    }@else if $lv==4 {
+        @return  #4b69ff;
+    }@else if $lv==5 {
+        @return  #bbbbbb;
+    }
+}
+
+@function rem($px) {
+    @return $px * 0.01rem;
+}
+
+//...

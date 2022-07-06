@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "SansSerif";
+  src: url("SansSerif.woff2") format("woff2"),
+       url("SansSerif.woff") format("woff"),
+       url("SansSerif.ttf") format("truetype"),
+       url("SansSerif.eot") format("embedded-opentype"),
+       url("SansSerif.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
