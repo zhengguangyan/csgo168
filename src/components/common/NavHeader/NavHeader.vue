@@ -1189,7 +1189,6 @@ export default {
     
   }
 
-
   .XiangZi_Box {
     width: 100%;
     display: flex;
